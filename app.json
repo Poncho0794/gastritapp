@@ -15,7 +15,7 @@
       "package": "com.gastritapp.gastritapp",
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/images/gastritapp_icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#d8f0e8"
       },
       "edgeToEdgeEnabled": true
     },

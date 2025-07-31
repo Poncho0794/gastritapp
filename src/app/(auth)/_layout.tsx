@@ -2,7 +2,7 @@ import { Redirect, Stack } from 'expo-router';
 const isAuthenticated = false; // Replace with actual authentication logic
 const AuthLayout = () => {
   if (!isAuthenticated) {
-    return <Redirect href="/login" />;
+    return <Redirect href="/(login)" />;
   }
   return (
     <Stack>

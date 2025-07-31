@@ -7,7 +7,7 @@ import {
   useColorScheme,
 } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { Colors } from '../constants/Colors';
+import { Colors } from '../../constants/Colors';
 
 export default function Login() {
   const colorScheme = useColorScheme();
@@ -19,7 +19,7 @@ export default function Login() {
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <Image
-          source={require('../assets/images/gastritapp_logo.png')}
+          source={require('../../assets/images/gastritapp_logo.png')}
           style={styles.logo}
         />
         <Text style={styles.title}> {t('LOGIN_PAGE_TITLE')}</Text>

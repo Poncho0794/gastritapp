@@ -32,7 +32,11 @@
           "image": "./src/assets/images/gastritapp_logo.png",
           "imageWidth": 150,
           "resizeMode": "contain",
-          "backgroundColor": "#d8f0e8"
+          "backgroundColor": "#d8f0e8",
+          "dark": {
+            "image": "./src/assets/images/gastritapp_logo.png",
+            "backgroundColor": "#122b23"
+          }
         }
       ]
     ],

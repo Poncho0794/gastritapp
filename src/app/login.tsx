@@ -37,10 +37,10 @@ const getStyles = (theme: 'dark' | 'light') =>
       backgroundColor: Colors[theme ?? 'light'].background,
     },
     text: {
-      color: theme === 'dark' ? '#d8f0e8' : '#122b23',
+      color: Colors[theme ?? 'light'].text,
     },
     title: {
-      color: theme === 'dark' ? '#d8f0e8' : '#122b23',
+      color: Colors[theme ?? 'light'].text,
       fontSize: 24,
       fontWeight: 'bold',
     },

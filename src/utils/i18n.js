@@ -9,7 +9,11 @@ const languageDetector = {
   async: true,
   detect: (cb) => {
     const locales = RNLocalize.getLocales();
-    cb(locales[0]?.languageCode || 'en');
+    if (Array.isArray(locales) && locales.length > 0) {
+      cb(locales[0].languageCode);
+    } else {
+      cb('en');
+    }
   },
   init: () => {},
   cacheUserLanguage: () => {},

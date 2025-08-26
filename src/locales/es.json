@@ -1,4 +1,11 @@
 {
   "LOGIN_PAGE_TITLE": "Bienvenido a GastritApp",
-  "LOGIN_PAGE_SUBTITLE": "Tu compañero personal para el manejo de la gastritis"
+  "LOGIN_PAGE_SUBTITLE": "Tu compañero personal para el manejo de la gastritis",
+  "LOGIN_USERNAME": "Usuario",
+  "LOGIN_USERNAME_PLACEHOLDER": "Ingresa tu usuario",
+  "LOGIN_PASSWORD": "Contraseña",
+  "LOGIN_PASSWORD_PLACEHOLDER": "Ingresa tu contraseña",
+  "LOGIN_BUTTON": "Iniciar sesión",
+  "LOGIN_FORGOT_PASSWORD": "¿Olvidaste tu contraseña?",
+  "LOGIN_SIGNUP": "¿No tienes una cuenta? Regístrate"
 }

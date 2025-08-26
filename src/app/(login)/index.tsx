@@ -1,5 +1,8 @@
+import Input from '@/src/components/features/auth/Input';
+import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import {
+  Button,
   Image,
   SafeAreaView,
   StyleSheet,
@@ -15,6 +18,18 @@ export default function Login() {
 
   const { t } = useTranslation();
 
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      userName: '',
+      password: '',
+    },
+  });
+  const onSubmit = (data: any) => console.log(data);
+  console.log(errors);
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
@@ -24,6 +39,43 @@ export default function Login() {
         />
         <Text style={styles.title}> {t('LOGIN_PAGE_TITLE')}</Text>
         <Text style={styles.text}> {t('LOGIN_PAGE_SUBTITLE')}</Text>
+
+        <Controller
+          control={control}
+          name="userName"
+          rules={{
+            required: true,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <Input
+              label="LOGIN_USERNAME"
+              placeholder="LOGIN_USERNAME_PLACEHOLDER"
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              errors={errors.userName}
+            />
+          )}
+        />
+        <Controller
+          control={control}
+          name="password"
+          rules={{
+            required: true,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <Input
+              label="LOGIN_PASSWORD"
+              placeholder="LOGIN_PASSWORD_PLACEHOLDER"
+              isPWD
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+              errors={errors.password}
+            />
+          )}
+        />
+        <Button title="Submit" onPress={handleSubmit(onSubmit)} />
       </SafeAreaView>
     </SafeAreaProvider>
   );

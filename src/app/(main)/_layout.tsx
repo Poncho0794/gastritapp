@@ -1,12 +1,10 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
-
 import { IconSymbol } from '@/src/components/ui/IconSymbol';
 import { Colors } from '@/src/constants/Colors';
 import { useColorScheme } from '@/src/hooks/useColorScheme';
-
-export default function TabLayout() {
+import { Tabs } from 'expo-router';
+import { Platform } from 'react-native';
+// Replace with actual authentication logic
+const MainLayout = () => {
   const colorScheme = useColorScheme();
 
   return (
@@ -24,23 +22,16 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
-          title: 'Home',
+          title: 'home',
           tabBarIcon: ({ color }) => (
             <IconSymbol size={28} name="house.fill" color={color} />
           ),
         }}
       />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
-          ),
-        }}
-      />
     </Tabs>
   );
-}
+};
+
+export default MainLayout;

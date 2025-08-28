@@ -18,6 +18,7 @@ interface InputProps {
   onChangeText?: (text: string) => void;
   value?: string;
   errors?: any;
+  type?: 'default' | 'email' | 'password' | 'number' | 'phone-pad';
 }
 export default function Input({
   label,

@@ -1,4 +1,5 @@
 import Input from '@/src/components/features/auth/Input';
+import { useSession } from '@/src/hooks/useSession';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import {
@@ -15,7 +16,7 @@ import { Colors } from '../../constants/Colors';
 export default function Login() {
   const colorScheme = useColorScheme();
   const styles = getStyles(colorScheme ?? 'light');
-
+  const { signIn } = useSession();
   const { t } = useTranslation();
 
   const {
@@ -28,8 +29,12 @@ export default function Login() {
       password: '',
     },
   });
-  const onSubmit = (data: any) => console.log(data);
-  console.log(errors);
+  const onSubmit = (data: any) => {
+    signIn(data.userName, data.password).catch((error) => {
+      console.error('Error during sign-in:', error);
+      alert(error.message);
+    });
+  };
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
@@ -54,6 +59,7 @@ export default function Login() {
               onChangeText={onChange}
               value={value}
               errors={errors.userName}
+              type="email"
             />
           )}
         />

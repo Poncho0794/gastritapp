@@ -3,12 +3,14 @@ import { AppState, Platform } from 'react-native';
 import 'react-native-url-polyfill/auto';
 import { SecureStoreAdapter } from './SecureStoreAdapter';
 
-const supabaseUrl =
-  process.env.EXPO_PUBLIC_SUPABASE_PROJECT_URL || 'TU_PROJECT_URL';
-const supabaseAnonKey =
-  process.env.EXPO_PUBLIC_SUPABASE_PROJECT_ANON_KEY || 'TU_ANON_KEY';
+import Constants from 'expo-constants';
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+const SUPABASE_URL = Constants.expoConfig?.extra?.SUPABASE_PROJECT_URL;
+const SUPABASE_ANON_KEY =
+  Constants.expoConfig?.extra?.SUPABASE_PROJECT_ANON_KEY;
+console.log('SUPABASE_URL:', SUPABASE_URL);
+console.log('SUPABASE_ANON_KEY:', SUPABASE_ANON_KEY);
+export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   auth: {
     ...(Platform.OS !== 'web' ? { storage: SecureStoreAdapter } : {}),
     autoRefreshToken: true,

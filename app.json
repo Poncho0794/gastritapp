@@ -2,7 +2,7 @@
   "expo": {
     "name": "gastritapp",
     "slug": "gastritapp",
-    "version": "1.0.0",
+    "version": "0.0.2",
     "orientation": "portrait",
     "icon": "./src/assets/images/gastritapp_icon.png",
     "scheme": "gastritapp",
@@ -47,8 +47,9 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "52de070a-632a-44e2-bc26-15095c0b76a7"
+        "projectId": "71f3b0e0-b75a-4d16-9897-5abf4a755cc4"
       }
-    }
+    },
+    "owner": "abanda"
   }
 }
